@@ -3,350 +3,710 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dimitrios Makrygiannis | Research Portfolio</title>
+		<title>PosePilot — Human Motion Visualisation & Analysis</title>
 		<meta
 			name="description"
-			content="Official portfolio of research applications and publications by Dimitrios Makrygiannis, Mines Paris PSL."
+			content="PosePilot is an open-access, web-based platform that unifies comparative visualisation with interpretable, metric-based analysis of human motion data."
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="assets1/PosePilot_Logo-D4abg_9Q.svg"
 		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
 			rel="stylesheet"
 		/>
 		<link
 			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0"
 		/>
 		<style>
 			:root {
-				--bg: #0f172a;
-				--surface: #1e293b;
-				--surface-hover: #334155;
-				--border: rgba(148, 163, 184, 0.15);
-				--text-primary: #f8fafc;
-				--text-secondary: #94a3b8;
-				--accent: #818cf8; /* Indigo 400 */
-				--accent-hover: #a5b4fc;
-				--success: #34d399;
+				--bg: #ffffff;
+				--bg-soft: #f7f8fc;
+				--border: #e4e7ef;
+				--text: #111827;
+				--text-2: #4b5563;
+				--text-3: #9ca3af;
+				--accent: #4f46e5;
+				--accent-2: #6366f1;
+				--accent-bg: #eef2ff;
+				--success: #059669;
+				--warning: #d97706;
+				--tag-bg: #f1f5f9;
+				--tag-text: #475569;
 			}
 
-			* {
+			*,
+			*::before,
+			*::after {
 				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				scroll-behavior: smooth;
 			}
 
 			body {
-				margin: 0;
 				font-family:
 					"Inter",
 					-apple-system,
 					BlinkMacSystemFont,
-					"Segoe UI",
-					Roboto,
 					sans-serif;
-				color: var(--text-primary);
-				background-color: var(--bg);
-				background-image:
-					radial-gradient(
-						at 0% 0%,
-						rgba(99, 102, 241, 0.08) 0px,
-						transparent 50%
-					),
-					radial-gradient(
-						at 100% 0%,
-						rgba(16, 185, 129, 0.05) 0px,
-						transparent 50%
-					);
-				min-height: 100vh;
-				line-height: 1.6;
+				background: var(--bg);
+				color: var(--text);
+				line-height: 1.7;
+				font-size: 16px;
+				-webkit-font-smoothing: antialiased;
 			}
 
-			.container {
-				max-width: 1000px;
+			/* ── LAYOUT ─────────────────────────────────── */
+			.wrap {
+				max-width: 860px;
 				margin: 0 auto;
-				padding: 60px 24px;
+				padding: 0 28px;
 			}
 
-			/* HEADER */
-			header {
-				margin-bottom: 60px;
+			/* ── NAV ────────────────────────────────────── */
+			nav {
+				position: sticky;
+				top: 0;
+				z-index: 50;
+				background: rgba(255, 255, 255, 0.88);
+				backdrop-filter: blur(12px);
+				-webkit-backdrop-filter: blur(12px);
 				border-bottom: 1px solid var(--border);
-				padding-bottom: 40px;
+			}
+			.nav-inner {
+				max-width: 860px;
+				margin: 0 auto;
+				padding: 0 28px;
+				height: 52px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.nav-brand {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				font-weight: 700;
+				font-size: 0.95rem;
+				color: var(--text);
+				text-decoration: none;
+				letter-spacing: -0.01em;
+			}
+			.nav-brand img {
+				height: 22px;
+				width: 22px;
+			}
+			.nav-links {
+				display: flex;
+				align-items: center;
+				gap: 4px;
+				list-style: none;
+			}
+			.nav-links a {
+				color: var(--text-2);
+				text-decoration: none;
+				font-size: 0.84rem;
+				font-weight: 500;
+				padding: 6px 12px;
+				border-radius: 7px;
+				transition: all 0.15s;
+			}
+			.nav-links a:hover {
+				color: var(--text);
+				background: var(--bg-soft);
 			}
 
-			.profile-headline {
-				display: flex;
-				justify-content: space-between;
-				align-items: flex-start;
-				flex-wrap: wrap;
-				gap: 20px;
+			.nav-btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 6px;
+				padding: 7px 16px;
+				background: var(--accent);
+				color: #fff !important;
+				border-radius: 7px;
+				font-size: 0.84rem;
+				font-weight: 600;
+				text-decoration: none;
+				transition:
+					background 0.15s,
+					transform 0.15s;
+			}
+			.nav-links .nav-btn:hover {
+				background: var(--accent-2) !important;
+				color: #fff !important;
+				transform: translateY(-1px);
+			}
+			.nav-btn .material-symbols-outlined {
+				font-size: 16px;
+			}
+
+			/* ── HERO ────────────────────────────────────── */
+			.hero {
+				padding: 80px 0 72px;
+				text-align: center;
+				border-bottom: 1px solid var(--border);
+			}
+
+			.hero-logo {
+				width: 112px;
+				height: 112px;
+				margin: 0 auto 22px;
+				display: block;
 			}
 
 			h1 {
-				font-size: 2rem;
+				font-size: clamp(2.8rem, 6vw, 4rem);
 				font-weight: 700;
-				margin: 0 0 8px 0;
-				letter-spacing: -0.02em;
+				letter-spacing: -0.04em;
+				line-height: 1.06;
+				color: var(--text);
+			}
+
+			/* ── META STRIP (authors / venues / buttons) ── */
+			.meta-strip {
+				padding: 40px 0 48px;
+				text-align: center;
+				border-bottom: 1px solid var(--border);
+			}
+
+			.subtitle {
+				font-size: 1.05rem;
+				color: var(--text-2);
+				font-style: italic;
+				font-weight: 400;
+				margin-bottom: 24px;
+			}
+
+			.authors {
+				font-size: 0.95rem;
+				color: var(--text-2);
+				margin-bottom: 5px;
+			}
+			.authors strong {
+				color: var(--text);
+				font-weight: 600;
 			}
 
 			.affiliation {
-				font-size: 1.1rem;
-				color: var(--text-secondary);
-				font-weight: 400;
+				font-size: 0.83rem;
+				color: var(--text-3);
+				margin-bottom: 22px;
+			}
+
+			/* venue badges */
+			.venues {
+				display: flex;
+				gap: 8px;
+				justify-content: center;
+				flex-wrap: wrap;
+				margin-bottom: 24px;
+			}
+			.badge {
+				display: inline-flex;
+				align-items: center;
+				gap: 5px;
+				padding: 4px 12px;
+				border-radius: 100px;
+				font-size: 0.74rem;
+				font-weight: 600;
+				letter-spacing: 0.02em;
+				border: 1px solid;
+			}
+			.badge .material-symbols-outlined {
+				font-size: 12px;
+			}
+			.badge.published {
+				background: #eff6ff;
+				border-color: #bfdbfe;
+				color: #1d4ed8;
+			}
+			.badge.accepted {
+				background: #f0fdf4;
+				border-color: #bbf7d0;
+				color: var(--success);
+			}
+			.badge.review {
+				background: #fffbeb;
+				border-color: #fde68a;
+				color: var(--warning);
+			}
+
+			/* action buttons */
+			.actions {
+				display: flex;
+				gap: 10px;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+			.btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 7px;
+				padding: 9px 20px;
+				height: 40px;
+				border-radius: 8px;
+				font-size: 0.875rem;
+				font-weight: 600;
+				text-decoration: none;
+				border: none;
+				cursor: pointer;
+				font-family: inherit;
+				transition: all 0.15s;
+			}
+			.btn .material-symbols-outlined {
+				font-size: 16px;
+			}
+
+			.btn-primary {
+				background: var(--accent);
+				color: #fff;
+			}
+			.btn-primary:hover {
+				background: var(--accent-2);
+				transform: translateY(-1px);
+				box-shadow: 0 4px 16px rgba(79, 70, 229, 0.2);
+			}
+
+			.btn-outline {
+				background: transparent;
+				color: var(--text);
+				border: 1.5px solid var(--border);
+			}
+			.btn-outline:hover {
+				border-color: #9ca3af;
+				background: var(--bg-soft);
+			}
+
+			.btn-ghost {
+				background: transparent;
+				color: var(--text-2);
+				border: 1.5px solid var(--border);
+			}
+			.btn-ghost:hover {
+				color: var(--text);
+				border-color: #9ca3af;
+			}
+
+			.btn-sm {
+				padding: 5px 13px;
+				height: 32px;
+				font-size: 0.8rem;
+				border-radius: 6px;
+			}
+			.btn-sm .material-symbols-outlined {
+				font-size: 14px;
+			}
+
+			.btn-disabled {
+				opacity: 0.4;
+				cursor: not-allowed;
+				background: transparent;
+				color: var(--text-3);
+				border: 1.5px solid var(--border);
+			}
+
+			/* ── DIVIDER ─────────────────────────────────── */
+			hr {
+				border: none;
+				border-top: 1px solid var(--border);
 				margin: 0;
 			}
 
-			.social-links {
-				display: flex;
-				gap: 12px;
-			}
-
-			.social-btn {
-				display: inline-flex;
-				align-items: center;
-				gap: 8px;
-				padding: 8px 12px;
-				border-radius: 6px;
-				background: var(--surface);
-				border: 1px solid var(--border);
-				color: var(--text-secondary);
-				text-decoration: none;
-				font-size: 0.85rem;
-				font-weight: 500;
-				transition: all 0.2s;
-			}
-
-			.social-btn:hover {
-				background: var(--surface-hover);
-				color: var(--text-primary);
-				border-color: var(--text-secondary);
-			}
-
-			.intro {
-				margin-top: 32px;
-				color: var(--text-secondary);
-				max-width: 700px;
-				font-size: 1rem;
-			}
-
-			/* PUBLICATIONS LIST */
-			.section-title {
-				font-size: 0.85rem;
+			/* ── SECTION HEADER ──────────────────────────── */
+			.sec-label {
+				font-size: 0.68rem;
+				font-weight: 700;
 				text-transform: uppercase;
-				letter-spacing: 0.1em;
-				color: var(--text-secondary);
-				margin-bottom: 24px;
+				letter-spacing: 0.16em;
+				color: var(--accent);
+				margin-bottom: 20px;
+				display: block;
+			}
+
+			/* ── ABSTRACT ────────────────────────────────── */
+			.abstract-section {
+				padding: 64px 0;
+			}
+
+			.abstract-body {
+				font-size: 1.01rem;
+				color: var(--text-2);
+				line-height: 1.88;
+				max-width: 780px;
+			}
+			.abstract-body p + p {
+				margin-top: 18px;
+			}
+			.abstract-body strong {
+				color: var(--text);
 				font-weight: 600;
+			}
+
+			.index-terms {
+				margin-top: 28px;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 7px;
+				align-items: center;
+			}
+			.terms-label {
+				font-size: 0.74rem;
+				font-weight: 600;
+				color: var(--text-3);
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+				margin-right: 4px;
+			}
+			.term {
+				padding: 3px 10px;
+				border-radius: 4px;
+				font-size: 0.76rem;
+				font-weight: 500;
+				background: var(--accent-bg);
+				color: var(--accent);
+				border: 1px solid #c7d2fe;
+			}
+
+			/* ── VIDEO ───────────────────────────────────── */
+			.video-section {
+				padding: 64px 0;
+			}
+
+			.video-frame {
+				width: 100%;
+				aspect-ratio: 16/9;
+				border-radius: 14px;
+				border: 1px solid var(--border);
+				background: var(--bg-soft);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 12px;
+				position: relative;
+				overflow: hidden;
+			}
+			.video-frame::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: radial-gradient(
+					ellipse at 50% 50%,
+					rgba(99, 102, 241, 0.06) 0%,
+					transparent 65%
+				);
+			}
+			.video-frame .material-symbols-outlined {
+				font-size: 52px;
+				color: var(--accent);
+				opacity: 0.35;
+				position: relative;
+				z-index: 1;
+			}
+			.video-frame p {
+				font-size: 0.9rem;
+				color: var(--text-3);
+				position: relative;
+				z-index: 1;
+			}
+			.video-frame .btn {
+				position: relative;
+				z-index: 1;
+				margin-top: 4px;
+			}
+
+			/* ── PUBLICATIONS ────────────────────────────── */
+			.pub-section {
+				padding: 64px 0 88px;
 			}
 
 			.pub-list {
 				display: flex;
 				flex-direction: column;
-				gap: 24px;
+				gap: 0;
 			}
 
-			.pub-card {
-				background: var(--surface);
-				border: 1px solid var(--border);
-				border-radius: 12px;
-				padding: 24px;
-				transition: border-color 0.2s;
-				position: relative;
+			.pub-item {
+				padding: 28px 0;
+				border-bottom: 1px solid var(--border);
 			}
-
-			.pub-card:hover {
-				border-color: rgba(99, 102, 241, 0.4);
-			}
-
-			.pub-header {
-				display: flex;
-				justify-content: space-between;
-				align-items: flex-start;
-				margin-bottom: 12px;
-				gap: 16px;
-			}
-
-			.pub-type {
-				font-size: 0.75rem;
-				font-weight: 600;
-				padding: 4px 8px;
-				border-radius: 4px;
-				text-transform: uppercase;
-				letter-spacing: 0.05em;
-				white-space: nowrap;
-			}
-
-			.pub-type.conference {
-				background: rgba(129, 140, 248, 0.15);
-				color: #c7d2fe;
-			}
-
-			.pub-title {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: var(--text-primary);
-				margin: 0 0 8px 0;
-				line-height: 1.4;
-			}
-
-			.pub-authors {
-				color: var(--text-secondary);
-				font-size: 0.95rem;
-				margin-bottom: 4px;
-			}
-
-			.pub-venue {
-				color: var(--text-secondary);
-				font-style: italic;
-				font-size: 0.9rem;
-				margin-bottom: 20px;
-			}
-
-			.pub-venue strong {
-				color: var(--text-primary);
-				font-weight: 500;
-			}
-
-			.actions {
-				display: flex;
-				align-items: center;
-				gap: 12px;
-				flex-wrap: wrap;
-				margin-top: 20px;
-				padding-top: 20px;
+			.pub-item:first-child {
 				border-top: 1px solid var(--border);
 			}
 
-			.btn {
-				display: inline-flex;
+			.pub-meta {
+				display: flex;
 				align-items: center;
-				justify-content: center;
-				gap: 6px;
-				padding: 8px 16px;
-				border-radius: 6px;
-				font-size: 0.9rem;
+				gap: 10px;
+				margin-bottom: 10px;
+				flex-wrap: wrap;
+			}
+			.pub-year {
+				font-size: 0.78rem;
 				font-weight: 500;
-				cursor: pointer;
-				text-decoration: none;
-				transition: all 0.2s;
-				height: 36px;
+				color: var(--text-3);
 			}
 
-			.btn-primary {
-				background: var(--accent);
-				color: white;
-				border: 1px solid transparent;
+			.pub-title {
+				font-size: 1.02rem;
+				font-weight: 600;
+				color: var(--text);
+				line-height: 1.45;
+				margin-bottom: 5px;
 			}
-			.btn-primary:hover {
-				background: var(--accent-hover);
+			.pub-authors {
+				font-size: 0.875rem;
+				color: var(--text-2);
+				margin-bottom: 3px;
+			}
+			.pub-authors strong {
+				color: var(--text);
+				font-weight: 600;
+			}
+			.pub-venue {
+				font-size: 0.84rem;
+				color: var(--text-3);
+				font-style: italic;
+				margin-bottom: 14px;
+			}
+			.pub-venue strong {
+				font-style: normal;
+				color: var(--text-2);
+				font-weight: 500;
 			}
 
-			.btn-secondary {
-				background: transparent;
-				border: 1px solid var(--border);
-				color: var(--text-primary);
-			}
-			.btn-secondary:hover {
-				background: var(--surface-hover);
-				border-color: var(--text-secondary);
+			.pub-links {
+				display: flex;
+				gap: 8px;
+				flex-wrap: wrap;
+				align-items: center;
 			}
 
-			.btn-disabled {
-				opacity: 0.5;
-				cursor: not-allowed;
-				background: rgba(255, 255, 255, 0.05);
-				color: var(--text-secondary);
-				border: 1px solid transparent;
+			/* bibtex */
+			.bib-block {
+				display: none;
+				margin-top: 14px;
+			}
+			.bib-block.open {
+				display: block;
+			}
+			.bib-inner {
+				background: #1e1e2e;
+				border-radius: 10px;
+				padding: 16px 20px;
+				font-family: "SF Mono", "Fira Code", "Menlo", monospace;
+				font-size: 0.76rem;
+				color: #a6e3a1;
+				white-space: pre;
+				overflow-x: auto;
+				line-height: 1.7;
+			}
+			.bib-footer {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				margin-top: 10px;
 			}
 
-			/* BibTeX Modal/Toast */
+			/* ── TOAST ───────────────────────────────────── */
 			.toast {
 				position: fixed;
 				bottom: 24px;
 				right: 24px;
-				background: var(--success);
-				color: white;
-				padding: 12px 24px;
-				border-radius: 8px;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-				transform: translateY(100px);
-				opacity: 0;
-				transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+				z-index: 999;
+				background: #fff;
+				border: 1px solid #bbf7d0;
+				color: var(--success);
+				padding: 10px 18px;
+				border-radius: 10px;
+				font-size: 0.875rem;
 				font-weight: 500;
 				display: flex;
 				align-items: center;
 				gap: 8px;
+				box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+				transform: translateY(80px);
+				opacity: 0;
+				transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 			}
-
+			.toast .material-symbols-outlined {
+				font-size: 16px;
+			}
 			.toast.show {
 				transform: translateY(0);
 				opacity: 1;
 			}
 
-			.material-symbols-outlined {
-				font-size: 18px;
+			/* ── FOOTER ──────────────────────────────────── */
+			footer {
+				border-top: 1px solid var(--border);
+				padding: 24px 28px;
+				max-width: 860px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 10px;
+				font-size: 0.82rem;
+				color: var(--text-3);
+			}
+			footer a {
+				color: var(--text-3);
+				text-decoration: none;
+			}
+			footer a:hover {
+				color: var(--accent);
 			}
 
-			footer {
-				margin-top: 80px;
-				text-align: center;
-				font-size: 0.85rem;
-				color: var(--text-secondary);
-				border-top: 1px solid var(--border);
-				padding-top: 24px;
+			/* ── RESPONSIVE ──────────────────────────────── */
+			@media (max-width: 640px) {
+				h1 {
+					letter-spacing: -0.03em;
+				}
+				.title-section {
+					padding: 48px 0 40px;
+				}
+				.banner-logo {
+					width: 88px;
+					height: 88px;
+				}
 			}
 		</style>
 	</head>
 	<body>
-		<div class="container">
-			<header>
-				<div class="profile-headline">
-					<div>
-						<h1>Dimitrios Makrygiannis</h1>
-						<p class="affiliation">Research Engineer at Mines Paris PSL</p>
-					</div>
-					<div class="social-links">
-						<a
-							href="https://www.researchgate.net/profile/Dimitrios-Makrygiannis"
-							target="_blank"
-							class="social-btn"
-						>
-							ResearchGate
+		<!-- NAV -->
+		<nav>
+			<div class="nav-inner">
+				<a href="#top" class="nav-brand">
+					<img src="assets1/PosePilot_Logo-D4abg_9Q.svg" alt="PosePilot" />
+					PosePilot
+				</a>
+				<ul class="nav-links">
+					<li><a href="#abstract">Abstract</a></li>
+					<li><a href="#publications">Publications</a></li>
+					<li>
+						<a href="./posepilot.html" class="nav-btn">
+							<span class="material-symbols-outlined">rocket_launch</span>
+							All-in-One App
 						</a>
-						<!-- Add LinkedIn if desired -->
-					</div>
-				</div>
-				<p class="intro">
-					This is the official repository for the
-					<strong>PosePilot</strong> project. It brings together our scientific
-					publications and their corresponding applications. Below, you will
-					find our work listed in chronological order, providing direct access
-					to our tools for human motion analysis, dexterity, and ergonomics. For
-					any issues or questions, please contact
-					<a
-						href="mailto:dimitris.makrygiannis@minesparis.psl.eu"
-						style="color: var(--accent); text-decoration: none"
-						>dimitris.makrygiannis@minesparis.psl.eu</a
-					>.
-				</p>
-			</header>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-			<main>
-				<div class="section-title">Peer-Reviewed Publications & Software</div>
+		<div class="wrap">
+			<!-- HERO: logo + title only -->
+			<div id="top" class="hero">
+				<img
+					src="assets1/PosePilot_Logo-D4abg_9Q.svg"
+					alt="PosePilot Logo"
+					class="hero-logo"
+				/>
+				<h1>PosePilot</h1>
+			</div>
+
+			<!-- META STRIP: subtitle / authors / affiliation -->
+			<div class="meta-strip">
+				<p class="subtitle">
+					A web-based platform for human motion visualisation and analysis
+				</p>
+				<p class="authors">
+					<strong>D. Makrygiannis</strong> &ensp;·&ensp; A. Glushkova
+					&ensp;·&ensp; S. Manitsaris &ensp;·&ensp; G. Senteri
+				</p>
+				<p class="affiliation">Mines Paris PSL — Centre for Robotics</p>
+			</div>
+
+			<hr />
+
+			<!-- ABSTRACT -->
+			<section class="abstract-section" id="abstract">
+				<span class="sec-label">Abstract</span>
+				<div class="abstract-body">
+					<p>
+						Human motion and motor skills are central to domains ranging from
+						sports and performing arts to rehabilitation, biomechanics, and
+						Industry 5.0. Despite advances in motion capture technology, the
+						analysis of motion data remains technically demanding: existing
+						frameworks are either limited to qualitative visual inspection
+						without quantitative grounding, or provide metric-based analysis
+						within narrow, domain-specific pipelines that require proprietary
+						software, programming expertise, or specialised hardware
+						installations.
+					</p>
+					<p>
+						PosePilot addresses this gap as an open-access, web-based platform
+						that unifies comparative visualisation with interpretable,
+						metric-based analysis of human motion. The framework is organised
+						into four interdependent layers —
+						<strong>computation</strong>, <strong>visualisation</strong>,
+						<strong>comparative analysis</strong>, and
+						<strong>interactivity</strong> — enabling structured exploration of
+						motion variability across subjects, conditions, and repetitions,
+						without installation or coding experience. Its modular and
+						extensible architecture supports a growing suite of domain-specific
+						applications, making PosePilot a versatile tool for researchers,
+						educators, and practitioners across biomechanics, sports science,
+						performing arts, rehabilitation, and industrial ergonomics.
+					</p>
+				</div>
+				<div class="index-terms">
+					<span class="terms-label">Index Terms</span>
+					<span class="term">Human Motion</span>
+					<span class="term">Visualisation</span>
+					<span class="term">Metric-Based Framework</span>
+					<span class="term">Comparative Analysis</span>
+					<span class="term">Web-Based Architecture</span>
+					<span class="term">Motion Capture</span>
+					<span class="term">BVH</span>
+					<span class="term">Interactive Tool</span>
+				</div>
+			</section>
+
+			<hr />
+
+			<!-- VIDEO -->
+			<section class="video-section" id="demo">
+				<span class="sec-label">Demo</span>
+				<div class="video-frame">
+					<span class="material-symbols-outlined">slow_motion_video</span>
+					<p>Demo video coming soon</p>
+					<a href="./posepilot.html" class="btn btn-primary">
+						<span class="material-symbols-outlined">open_in_new</span>
+						Try the Live Application
+					</a>
+				</div>
+			</section>
+
+			<hr />
+
+			<!-- PUBLICATIONS -->
+			<section class="pub-section" id="publications">
+				<span class="sec-label">Publications</span>
 
 				<div class="pub-list">
-					<!-- ITEM 1: PosePilot FG -->
-					<article class="pub-card">
-						<div class="pub-header">
-							<span class="pub-type conference">Conference Paper</span>
-							<span style="font-size: 0.8rem; color: var(--text-secondary)"
-								>2025</span
-							>
+					<!-- FG 2025 -->
+					<div class="pub-item">
+						<div class="pub-meta">
+							<span class="badge published">
+								<span class="material-symbols-outlined">verified</span>
+								Conference Paper · IEEE FG 2025
+							</span>
+							<span class="pub-year">2025</span>
 						</div>
-						<h3 class="pub-title">
+						<div class="pub-title">
 							PosePilot—A Web-Based Application for Human Motion Data Analysis
 							and Visualization
-						</h3>
+						</div>
 						<div class="pub-authors">
 							<strong>D. Makrygiannis</strong>, A. Glushkova, S. Manitsaris, G.
 							Senteri
@@ -358,42 +718,66 @@
 								Gesture Recognition (FG)</strong
 							>
 						</div>
-
-						<div class="actions">
-							<a href="./posepilot.html" class="btn btn-primary">
+						<div class="pub-links">
+							<a href="./posepilot.html" class="btn btn-primary btn-sm">
 								<span class="material-symbols-outlined">rocket_launch</span>
 								Launch App
 							</a>
 							<a
 								href="https://www.researchgate.net/profile/Dimitrios-Makrygiannis/publication/394366373_PosePilot_-_A_Web-Based_Application_for_Human_Motion_Data_Analysis_and_Visualization/links/68d8362602d6215259b675f0/PosePilot-A-Web-Based-Application-for-Human-Motion-Data-Analysis-and-Visualization.pdf"
 								target="_blank"
-								class="btn btn-secondary"
+								class="btn btn-outline btn-sm"
 							>
 								<span class="material-symbols-outlined">picture_as_pdf</span>
 								PDF
 							</a>
 							<button
-								class="btn btn-secondary"
-								onclick="copyBibtex(\`posepilot_fg2025\`)"
+								class="btn btn-ghost btn-sm"
+								onclick="toggleBib('bib-fg')"
 							>
 								<span class="material-symbols-outlined">format_quote</span>
 								BibTeX
 							</button>
 						</div>
-					</article>
+						<div id="bib-fg" class="bib-block">
+							<div class="bib-inner">
+								@inproceedings{makrygiannis2025posepilot, title = {PosePilot—A
+								Web-Based Application for Human Motion Data Analysis and
+								Visualization}, author = {Makrygiannis, Dimitrios and Glushkova,
+								Alina and Manitsaris, Sotiris and Senteri, Gavriela}, booktitle
+								= {2025 IEEE 19th International Conference on Automatic Face and
+								Gesture Recognition (FG)}, pages = {1--1}, year = {2025},
+								organization = {IEEE} }
+							</div>
+							<div class="bib-footer">
+								<button
+									class="btn btn-ghost btn-sm"
+									onclick="copyBibtex('posepilot_fg2025')"
+								>
+									<span class="material-symbols-outlined">content_copy</span>
+									Copy
+								</button>
+							</div>
+						</div>
+					</div>
 
-					<!-- ITEM 2: GOM MOCO -->
-					<article class="pub-card">
-						<div class="pub-header">
-							<span class="pub-type conference">Conference Paper</span>
-							<span style="font-size: 0.8rem; color: var(--success)"
-								>Accepted (2026)</span
+					<!-- GOM -->
+					<div class="pub-item">
+						<div class="pub-meta">
+							<span class="badge accepted">
+								<span class="material-symbols-outlined">check_circle</span>
+								Conference Paper · MOCO 2026
+							</span>
+							<span
+								class="pub-year"
+								style="color: var(--success); font-weight: 600"
+								>Accepted</span
 							>
 						</div>
-						<h3 class="pub-title">
+						<div class="pub-title">
 							PosePilot-GOM: A Web-based application for dexterity analysis of
 							human movement
-						</h3>
+						</div>
 						<div class="pub-authors">
 							Y. Hergal, <strong>D. Makrygiannis</strong>, G. Senteri, A.
 							Glushkova, S. Manitsaris
@@ -401,132 +785,175 @@
 						<div class="pub-venue">
 							Accepted for <strong>Movement and Computing (MOCO) 2026</strong>
 						</div>
-
-						<div class="actions">
-							<a href="./GOM.html" class="btn btn-primary">
+						<div class="pub-links">
+							<a href="./GOM.html" class="btn btn-primary btn-sm">
 								<span class="material-symbols-outlined">rocket_launch</span>
-								Launch App (GOM)
+								Launch App
 							</a>
-							<button
-								class="btn btn-disabled"
-								disabled
-								title="Publication forthcoming"
-							>
-								<span class="material-symbols-outlined">lock</span>
-								PDF Pending
+							<button class="btn btn-disabled btn-sm" disabled>
+								<span class="material-symbols-outlined">lock</span> PDF Pending
 							</button>
 							<button
-								class="btn btn-secondary"
-								onclick="copyBibtex(\`gom_moco2026\`)"
+								class="btn btn-ghost btn-sm"
+								onclick="toggleBib('bib-gom')"
 							>
 								<span class="material-symbols-outlined">format_quote</span>
 								BibTeX
 							</button>
 						</div>
-					</article>
+						<div id="bib-gom" class="bib-block">
+							<div class="bib-inner">
+								@inproceedings{hergal2026posepilotgom, title = {PosePilot-GOM: A
+								Web-based application for dexterity analysis of human movement},
+								author = {Hergal, Youssef and Makrygiannis, Dimitrios and
+								Senteri, Gavriela and Glushkova, Alina and Manitsaris, Sotiris},
+								booktitle = {Proceedings of the 13th International Conference on
+								Movement and Computing}, year = {2026}, note = {Accepted} }
+							</div>
+							<div class="bib-footer">
+								<button
+									class="btn btn-ghost btn-sm"
+									onclick="copyBibtex('gom_moco2026')"
+								>
+									<span class="material-symbols-outlined">content_copy</span>
+									Copy
+								</button>
+							</div>
+						</div>
+					</div>
 
-					<!-- ITEM 3: ERGO MOCO -->
-					<article class="pub-card">
-						<div class="pub-header">
-							<span class="pub-type conference">Conference Paper</span>
-							<span style="font-size: 0.8rem; color: var(--success)"
-								>Accepted (2026)</span
+					<!-- Ergo -->
+					<div class="pub-item">
+						<div class="pub-meta">
+							<span class="badge accepted">
+								<span class="material-symbols-outlined">check_circle</span>
+								Conference Paper · MOCO 2026
+							</span>
+							<span
+								class="pub-year"
+								style="color: var(--success); font-weight: 600"
+								>Accepted</span
 							>
 						</div>
-						<h3 class="pub-title">
+						<div class="pub-title">
 							PosePilot-Ergo: A web-based application for ergonomic analysis and
 							human motion quantification
-						</h3>
+						</div>
 						<div class="pub-authors">
 							A. Glushkova, <strong>D. Makrygiannis</strong>, et al.
 						</div>
 						<div class="pub-venue">
 							Accepted for <strong>Movement and Computing (MOCO) 2026</strong>
 						</div>
-
-						<div class="actions">
-							<a href="./ergo.html" class="btn btn-primary">
+						<div class="pub-links">
+							<a href="./ergo.html" class="btn btn-primary btn-sm">
 								<span class="material-symbols-outlined">rocket_launch</span>
-								Launch App (Ergo)
+								Launch App
 							</a>
-							<button
-								class="btn btn-disabled"
-								disabled
-								title="Publication forthcoming"
-							>
-								<span class="material-symbols-outlined">lock</span>
-								PDF Pending
+							<button class="btn btn-disabled btn-sm" disabled>
+								<span class="material-symbols-outlined">lock</span> PDF Pending
 							</button>
 							<button
-								class="btn btn-secondary"
-								onclick="copyBibtex(\`ergo_moco2026\`)"
+								class="btn btn-ghost btn-sm"
+								onclick="toggleBib('bib-ergo')"
 							>
 								<span class="material-symbols-outlined">format_quote</span>
 								BibTeX
 							</button>
 						</div>
-					</article>
+						<div id="bib-ergo" class="bib-block">
+							<div class="bib-inner">
+								@inproceedings{glushkova2026posepilotergo, title =
+								{PosePilot-Ergo: A web-based application for ergonomic analysis
+								and human motion quantification}, author = {Glushkova, Alina and
+								Makrygiannis, Dimitrios and others}, booktitle = {Proceedings of
+								the 13th International Conference on Movement and Computing},
+								year = {2026}, note = {Accepted} }
+							</div>
+							<div class="bib-footer">
+								<button
+									class="btn btn-ghost btn-sm"
+									onclick="copyBibtex('ergo_moco2026')"
+								>
+									<span class="material-symbols-outlined">content_copy</span>
+									Copy
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
-			</main>
-
-			<footer>
-				&copy; 2026 Dimitrios Makrygiannis. All rights reserved.<br />
-			</footer>
+			</section>
 		</div>
+		<!-- /wrap -->
 
-		<!-- Toast Notification -->
+		<!-- FOOTER -->
+		<footer>
+			<span
+				>&copy; 2026 Dimitrios Makrygiannis &nbsp;·&nbsp; Mines Paris PSL</span
+			>
+			<span>
+				<a href="mailto:dimitris.makrygiannis@minesparis.psl.eu"
+					>dimitris.makrygiannis@minesparis.psl.eu</a
+				>
+				&nbsp;·&nbsp;
+				<a
+					href="https://www.researchgate.net/profile/Dimitrios-Makrygiannis"
+					target="_blank"
+					>ResearchGate</a
+				>
+			</span>
+		</footer>
+
+		<!-- TOAST -->
 		<div id="toast" class="toast">
 			<span class="material-symbols-outlined">check_circle</span>
 			BibTeX copied to clipboard
 		</div>
 
-		<!-- Hidden BibTeX Data -->
 		<script>
-						const bibtexData = {
-							posepilot_fg2025: \`@inproceedings{makrygiannis2025posepilot,
-			  title={PosePilot—A Web-Based Application for Human Motion Data Analysis and Visualization},
-			  author={Makrygiannis, Dimitrios and Glushkova, Alina and Manitsaris, Sotiris and Senteri, Gavriela},
-			  booktitle={2025 IEEE 19th International Conference on Automatic Face and Gesture Recognition (FG)},
-			  pages={1--1},
-			  year={2025},
-			  organization={IEEE}
-			}\`,
-							gom_moco2026: \`@inproceedings{hergal2026posepilotgom,
-			  title={PosePilot-GOM: A Web-based application for dexterity analysis of human movement},
-			  author={Hergal, Youssef and Makrygiannis, Dimitrios and Senteri, Gavriela and Glushkova, Alina and Manitsaris, Sotiris},
-			  booktitle={Proceedings of the 13th International Conference on Movement and Computing},
-			  year={2026},
-			  note={Accepted}
-			}\`,
-							ergo_moco2026: \`@inproceedings{glushkova2026posepilotergo,
-			  title={PosePilot-Ergo: A web-based application for ergonomic analysis and human motion quantification},
-			  author={Glushkova, Alina and Makrygiannis, Dimitrios and others},
-			  booktitle={Proceedings of the 13th International Conference on Movement and Computing},
-			  year={2026},
-			  note={Accepted}
-			}\`
-						};
+			const bibtexData = {
+				posepilot_fg2025: `@inproceedings{makrygiannis2025posepilot,
+  title        = {PosePilot—A Web-Based Application for Human Motion Data Analysis and Visualization},
+  author       = {Makrygiannis, Dimitrios and Glushkova, Alina and Manitsaris, Sotiris and Senteri, Gavriela},
+  booktitle    = {2025 IEEE 19th International Conference on Automatic Face and Gesture Recognition (FG)},
+  pages        = {1--1},
+  year         = {2025},
+  organization = {IEEE}
+}`,
+				gom_moco2026: `@inproceedings{hergal2026posepilotgom,
+  title     = {PosePilot-GOM: A Web-based application for dexterity analysis of human movement},
+  author    = {Hergal, Youssef and Makrygiannis, Dimitrios and Senteri, Gavriela and Glushkova, Alina and Manitsaris, Sotiris},
+  booktitle = {Proceedings of the 13th International Conference on Movement and Computing},
+  year      = {2026},
+  note      = {Accepted}
+}`,
+				ergo_moco2026: `@inproceedings{glushkova2026posepilotergo,
+  title     = {PosePilot-Ergo: A web-based application for ergonomic analysis and human motion quantification},
+  author    = {Glushkova, Alina and Makrygiannis, Dimitrios and others},
+  booktitle = {Proceedings of the 13th International Conference on Movement and Computing},
+  year      = {2026},
+  note      = {Accepted}
+}`,
+			}
 
-						function copyBibtex(id) {
-							const text = bibtexData[id];
-							if (!text) return;
+			function copyBibtex(id) {
+				const text = bibtexData[id]
+				if (!text) return
+				navigator.clipboard
+					.writeText(text)
+					.then(showToast)
+					.catch(() => alert("Could not copy."))
+			}
 
-							navigator.clipboard.writeText(text).then(() => {
-								showToast();
-							}).catch(err => {
-								console.error("Failed to copy", err);
-								// Fallback
-								alert("Could not copy automatically. Please check console.");
-							});
-						}
+			function toggleBib(id) {
+				document.getElementById(id)?.classList.toggle("open")
+			}
 
-						function showToast() {
-							const toast = document.getElementById("toast");
-							toast.classList.add("show");
-							setTimeout(() => {
-								toast.classList.remove("show");
-							}, 3000);
-						}
+			function showToast() {
+				const t = document.getElementById("toast")
+				t.classList.add("show")
+				setTimeout(() => t.classList.remove("show"), 3000)
+			}
 		</script>
 	</body>
 </html>
