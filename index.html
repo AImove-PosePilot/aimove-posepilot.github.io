@@ -1,18 +1,32 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-ZW8CQ615RR"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || []
+			function gtag() {
+				dataLayer.push(arguments)
+			}
+			gtag("js", new Date())
+
+			gtag("config", "G-ZW8CQ615RR")
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>PosePilot — Human Motion Visualisation & Analysis</title>
+		<title>A platform for BVH visualisation and analysis</title>
 		<meta
 			name="description"
-			content="PosePilot is an open-access, web-based platform that unifies comparative visualisation with interpretable, metric-based analysis of human motion data."
+			content="PosePilot is a free, online BVH viewer and motion capture analysis platform. Visualise, compare, and quantify human motion data directly in your browser, no installation required."
 		/>
 
 		<!-- SEO: keywords -->
 		<meta
 			name="keywords"
-			content="PosePilot, AImove, aimove-posepilot, human motion analysis, motion capture, BVH, motion visualisation, Makrygiannis,BVH visualiser, BVH visualizer, Mines Paris PSL, web-based platform, skeletal animation, gait analysis, posepilot mines, posepilot makrygiannis,aimove posepilot, posepilot app, posepilot web app, posepilot platform, posepilot application,motion visualization, BVH visualization,  BVH visualisation "
+			content="BVH viewer, BVH visualizer, online BVH viewer, free BVH player, motion capture viewer, skeletal animation viewer, human motion analysis, gait analysis tool, joint angle calculator, RULA assessment, REBA calculator, ergonomic risk assessment, biomechanics software, PosePilot, AImove, Makrygiannis, Mines Paris PSL"
 		/>
 		<meta name="author" content="Dimitris Makrygiannis" />
 		<link rel="canonical" href="https://aimove-posepilot.github.io/" />
@@ -22,11 +36,11 @@
 		<meta property="og:site_name" content="PosePilot" />
 		<meta
 			property="og:title"
-			content="PosePilot — Human Motion Visualisation & Analysis"
+			content="PosePilot: Human Motion Visualisation & Analysis"
 		/>
 		<meta
 			property="og:description"
-			content="PosePilot is an open-access, web-based platform that unifies comparative visualisation with interpretable, metric-based analysis of human motion data."
+			content="Free online BVH viewer and motion capture analysis platform. Visualise, compare, and quantify human motion data in your browser, no installation needed."
 		/>
 		<meta property="og:url" content="https://aimove-posepilot.github.io/" />
 		<meta
@@ -38,11 +52,11 @@
 		<meta name="twitter:card" content="summary" />
 		<meta
 			name="twitter:title"
-			content="PosePilot — Human Motion Visualisation & Analysis"
+			content="PosePilot: Human Motion Visualisation & Analysis"
 		/>
 		<meta
 			name="twitter:description"
-			content="Open-access web platform for human motion capture visualisation and metric-based analysis."
+			content="Free online BVH viewer and motion capture analysis tool. Visualise and compare human motion directly in the browser."
 		/>
 		<meta
 			name="twitter:image"
@@ -71,7 +85,7 @@
 						}
 					}
 				],
-				"keywords": "human motion analysis, motion capture, BVH, skeletal animation, gait analysis, web platform"
+				"keywords": "BVH viewer, BVH visualizer, online BVH viewer, motion capture viewer, human motion analysis, skeletal animation, gait analysis, joint kinematics, RULA, REBA, ergonomic assessment, biomechanics, PosePilot"
 			}
 		</script>
 
@@ -152,7 +166,7 @@
 				max-width: 860px;
 				margin: 0 auto;
 				padding: 0 28px;
-				height: 52px;
+				height: 68px;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
@@ -168,8 +182,10 @@
 				letter-spacing: -0.01em;
 			}
 			.nav-brand img {
-				height: 22px;
-				width: 22px;
+				height: 28px;
+				width: 28px;
+				border-radius: 50%;
+				object-fit: cover;
 			}
 			.nav-links {
 				display: flex;
@@ -217,65 +233,36 @@
 
 			/* ── HERO ────────────────────────────────────── */
 			.hero {
-				padding: 80px 0 72px;
+				padding: 72px 0 64px;
 				text-align: center;
-				border-bottom: 1px solid var(--border);
 			}
 
 			.hero-logo {
-				width: 112px;
-				height: 112px;
-				margin: 0 auto 22px;
+				width: 120px;
+				height: 120px;
+				margin: 0 auto 24px;
 				display: block;
+				border-radius: 50%;
+				object-fit: cover;
 			}
 
 			h1 {
-				font-size: clamp(2.8rem, 6vw, 4rem);
+				font-size: clamp(3.4rem, 7vw, 5rem);
 				font-weight: 700;
 				letter-spacing: -0.04em;
 				line-height: 1.06;
 				color: var(--text);
 			}
 
-			/* ── META STRIP (authors / venues / buttons) ── */
-			.meta-strip {
-				padding: 40px 0 48px;
-				text-align: center;
-				border-bottom: 1px solid var(--border);
-			}
-
 			.subtitle {
-				font-size: 1.05rem;
+				font-size: 1.1rem;
 				color: var(--text-2);
-				font-style: italic;
+				font-style: normal;
 				font-weight: 400;
-				margin-bottom: 24px;
-			}
-
-			.authors {
-				font-size: 0.95rem;
-				color: var(--text-2);
-				margin-bottom: 5px;
-			}
-			.authors strong {
-				color: var(--text);
-				font-weight: 600;
-			}
-
-			.affiliation {
-				font-size: 0.83rem;
-				color: var(--text-3);
-				margin-bottom: 22px;
+				margin-top: 14px;
 			}
 
 			/* venue badges */
-			.venues {
-				display: flex;
-				gap: 8px;
-				justify-content: center;
-				flex-wrap: wrap;
-				margin-bottom: 24px;
-			}
 			.badge {
 				display: inline-flex;
 				align-items: center;
@@ -306,13 +293,6 @@
 				color: var(--warning);
 			}
 
-			/* action buttons */
-			.actions {
-				display: flex;
-				gap: 10px;
-				justify-content: center;
-				flex-wrap: wrap;
-			}
 			.btn {
 				display: inline-flex;
 				align-items: center;
@@ -401,6 +381,7 @@
 			/* ── ABSTRACT ────────────────────────────────── */
 			.abstract-section {
 				padding: 64px 0;
+				text-align: center;
 			}
 
 			.abstract-body {
@@ -408,6 +389,8 @@
 				color: var(--text-2);
 				line-height: 1.88;
 				max-width: 780px;
+				margin: 0 auto;
+				text-align: left;
 			}
 			.abstract-body p + p {
 				margin-top: 18px;
@@ -423,6 +406,7 @@
 				flex-wrap: wrap;
 				gap: 7px;
 				align-items: center;
+				justify-content: center;
 			}
 			.terms-label {
 				font-size: 0.74rem;
@@ -445,6 +429,24 @@
 			/* ── VIDEO ───────────────────────────────────── */
 			.video-section {
 				padding: 64px 0;
+				text-align: center;
+			}
+
+			.platform-blurb {
+				margin-top: 48px;
+				text-align: center;
+			}
+			.platform-blurb p {
+				font-size: 1rem;
+				color: var(--text-2);
+				line-height: 1.75;
+				max-width: 660px;
+				margin: 0 auto 20px;
+			}
+			.platform-blurb .or-line {
+				font-size: 0.85rem;
+				color: var(--text-3);
+				margin: 20px 0 0;
 			}
 
 			.video-frame {
@@ -492,13 +494,13 @@
 
 			/* ── PUBLICATIONS ────────────────────────────── */
 			.pub-section {
-				padding: 64px 0 88px;
+				padding: 64px 0 40px;
+				text-align: center;
 			}
-
 			.pub-list {
+				text-align: left;
 				display: flex;
 				flex-direction: column;
-				gap: 0;
 			}
 
 			.pub-item {
@@ -533,10 +535,6 @@
 				font-size: 0.875rem;
 				color: var(--text-2);
 				margin-bottom: 3px;
-			}
-			.pub-authors strong {
-				color: var(--text);
-				font-weight: 600;
 			}
 			.pub-venue {
 				font-size: 0.84rem;
@@ -581,6 +579,50 @@
 				align-items: center;
 				gap: 8px;
 				margin-top: 10px;
+			}
+
+			/* ── TEAM SECTION ────────────────────────────── */
+			.team-section {
+				padding: 40px 0;
+				text-align: center;
+			}
+			.team-names {
+				font-size: 1.05rem;
+				font-weight: 500;
+				color: var(--text);
+				line-height: 1.6;
+				margin-bottom: 8px;
+			}
+			.team-link {
+				color: var(--text);
+				text-decoration: none;
+				transition: color 0.15s;
+			}
+			.team-link:hover {
+				color: var(--accent);
+			}
+			.team-extra {
+				font-size: 0.95rem;
+				color: var(--text-2);
+			}
+			.team-affiliation {
+				display: inline-flex;
+				align-items: center;
+				gap: 6px;
+				padding: 8px 16px;
+				background: var(--bg-soft);
+				border-radius: 8px;
+				border: 1px solid var(--border);
+				font-size: 0.85rem;
+				font-weight: 500;
+				color: var(--text-2);
+				margin-top: 12px;
+			}
+
+			/* ── KEYWORDS SECTION ────────────────────────── */
+			.keywords-section {
+				padding: 20px 0 88px;
+				text-align: center;
 			}
 
 			/* ── TOAST ───────────────────────────────────── */
@@ -639,10 +681,10 @@
 				h1 {
 					letter-spacing: -0.03em;
 				}
-				.title-section {
+				.hero {
 					padding: 48px 0 40px;
 				}
-				.banner-logo {
+				.hero-logo {
 					width: 88px;
 					height: 88px;
 				}
@@ -654,14 +696,18 @@
 		<nav>
 			<div class="nav-inner">
 				<a href="#top" class="nav-brand">
-					<img src="assets1/PosePilot_Logo-D4abg_9Q.svg" alt="PosePilot" />
+					<img src="assets1/PosePilot_Logo-D4abg_9Q.svg" alt="PosePilot logo" />
 					PosePilot
 				</a>
 				<ul class="nav-links">
 					<li><a href="#abstract">Abstract</a></li>
 					<li><a href="#publications">Publications</a></li>
 					<li>
-						<a href="./posepilot.html" class="nav-btn">
+						<a
+							href="./posepilot.html"
+							class="nav-btn"
+							aria-label="Launch PosePilot Application"
+						>
 							<span class="material-symbols-outlined">rocket_launch</span>
 							All-in-One App
 						</a>
@@ -671,26 +717,17 @@
 		</nav>
 
 		<div class="wrap">
-			<!-- HERO: logo + title only -->
+			<!-- HERO: logo + title + subtitle -->
 			<div id="top" class="hero">
 				<img
 					src="assets1/PosePilot_Logo-D4abg_9Q.svg"
-					alt="PosePilot Logo"
+					alt="PosePilot Web Platform for Human Motion Capture and Skeletal Analysis"
 					class="hero-logo"
 				/>
 				<h1>PosePilot</h1>
-			</div>
-
-			<!-- META STRIP: subtitle / authors / affiliation -->
-			<div class="meta-strip">
 				<p class="subtitle">
 					A web-based platform for human motion visualisation and analysis
 				</p>
-				<p class="authors">
-					<strong>D. Makrygiannis</strong> &ensp;·&ensp; A. Glushkova
-					&ensp;·&ensp; S. Manitsaris &ensp;·&ensp; G. Senteri
-				</p>
-				<p class="affiliation">Mines Paris PSL — Centre for Robotics</p>
 			</div>
 
 			<hr />
@@ -711,31 +748,21 @@
 						installations.
 					</p>
 					<p>
-						PosePilot addresses this gap as an open-access, web-based platform
-						that unifies comparative visualisation with interpretable,
-						metric-based analysis of human motion. The framework is organised
-						into four interdependent layers —
+						PosePilot addresses this gap as an open-access, browser-based motion
+						capture viewer and analysis platform that unifies comparative
+						visualisation with interpretable, metric-based analysis of human
+						motion. The framework is organised into four interdependent layers –
 						<strong>computation</strong>, <strong>visualisation</strong>,
 						<strong>comparative analysis</strong>, and
-						<strong>interactivity</strong> — enabling structured exploration of
+						<strong>interactivity</strong> – enabling structured exploration of
 						motion variability across subjects, conditions, and repetitions,
-						without installation or coding experience. Its modular and
-						extensible architecture supports a growing suite of domain-specific
-						applications, making PosePilot a versatile tool for researchers,
-						educators, and practitioners across biomechanics, sports science,
-						performing arts, rehabilitation, and industrial ergonomics.
+						directly in the browser without installation or coding experience.
+						Its modular and extensible architecture supports a growing suite of
+						domain-specific applications, making PosePilot a versatile tool for
+						researchers, educators, and practitioners across biomechanics,
+						sports science, performing arts, rehabilitation, and industrial
+						ergonomics.
 					</p>
-				</div>
-				<div class="index-terms">
-					<span class="terms-label">Index Terms</span>
-					<span class="term">Human Motion</span>
-					<span class="term">Visualisation</span>
-					<span class="term">Metric-Based Framework</span>
-					<span class="term">Comparative Analysis</span>
-					<span class="term">Web-Based Architecture</span>
-					<span class="term">Motion Capture</span>
-					<span class="term">BVH</span>
-					<span class="term">Interactive Tool</span>
 				</div>
 			</section>
 
@@ -747,10 +774,29 @@
 				<div class="video-frame">
 					<span class="material-symbols-outlined">slow_motion_video</span>
 					<p>Demo video coming soon</p>
+				</div>
+
+				<!-- Platform description + CTA -->
+				<div class="platform-blurb">
+					<p>
+						PosePilot is a continuously evolving platform, enriched with new
+						functionalities and domain-specific applications over time. Each
+						module is developed in close connection with a research publication,
+						extending the framework's capabilities across biomechanics, sports,
+						performing arts, and industrial ergonomics.
+					</p>
+					<p>
+						If you would like to explore all modules together in a single
+						application, click below:
+					</p>
 					<a href="./posepilot.html" class="btn btn-primary">
-						<span class="material-symbols-outlined">open_in_new</span>
-						Try the Live Application
+						<span class="material-symbols-outlined">apps</span>
+						All-in-One App
 					</a>
+					<p class="or-line">
+						Or browse the individual versions, each paired with its
+						corresponding paper, in the Publications section below.
+					</p>
 				</div>
 			</section>
 
@@ -775,8 +821,7 @@
 							and Visualization
 						</div>
 						<div class="pub-authors">
-							<strong>D. Makrygiannis</strong>, A. Glushkova, S. Manitsaris, G.
-							Senteri
+							D. Makrygiannis, A. Glushkova, S. Manitsaris, G. Senteri
 						</div>
 						<div class="pub-venue">
 							Published in
@@ -786,7 +831,7 @@
 							>
 						</div>
 						<div class="pub-links">
-							<a href="./posepilot.html" class="btn btn-primary btn-sm">
+							<a href="./posepilot_fg.html" class="btn btn-primary btn-sm">
 								<span class="material-symbols-outlined">rocket_launch</span>
 								Launch App
 							</a>
@@ -846,8 +891,8 @@
 							human movement
 						</div>
 						<div class="pub-authors">
-							Y. Hergal, <strong>D. Makrygiannis</strong>, G. Senteri, A.
-							Glushkova, S. Manitsaris
+							Y. Hergal, D. Makrygiannis, G. Senteri, A. Glushkova, S.
+							Manitsaris
 						</div>
 						<div class="pub-venue">
 							Accepted for <strong>Movement and Computing (MOCO) 2026</strong>
@@ -906,9 +951,7 @@
 							PosePilot-Ergo: A web-based application for ergonomic analysis and
 							human motion quantification
 						</div>
-						<div class="pub-authors">
-							A. Glushkova, <strong>D. Makrygiannis</strong>, et al.
-						</div>
+						<div class="pub-authors">A. Glushkova, D. Makrygiannis, et al.</div>
 						<div class="pub-venue">
 							Accepted for <strong>Movement and Computing (MOCO) 2026</strong>
 						</div>
@@ -950,13 +993,83 @@
 					</div>
 				</div>
 			</section>
+
+			<hr />
+
+			<!-- ΝΕΟ AUTHORS / TEAM SECTION -->
+			<section class="team-section" id="team">
+				<span class="sec-label">The Team</span>
+				<div class="team-grid">
+					<p class="team-names">
+						<a
+							href="https://www.researchgate.net/profile/Dimitrios-Makrygiannis"
+							target="_blank"
+							class="team-link"
+							>Dimitris Makrygiannis</a
+						>
+						&ensp;·&ensp;
+						<a href="#" class="team-link">Alina Glushkova</a> &ensp;·&ensp;
+						<a href="#" class="team-link">Sotiris Manitsaris</a> &ensp;·&ensp;
+						<a href="#" class="team-link">Gavriela Senteri</a><br />
+					</p>
+					<p class="team-affiliation">
+						<span
+							class="material-symbols-outlined"
+							style="font-size: 16px; vertical-align: text-bottom"
+							>school</span
+						>
+						<a
+							href="https://www.minesparis.psl.eu"
+							target="_blank"
+							class="team-link"
+							>Mines Paris PSL</a
+						>
+						-
+						<a
+							href="https://www.caor.minesparis.psl.eu"
+							target="_blank"
+							class="team-link"
+							>Centre for Robotics (CAOR)</a
+						>
+					</p>
+				</div>
+			</section>
+
+			<hr />
+
+			<!-- KEYWORDS / TECHNICAL SCOPE -->
+			<section class="keywords-section">
+				<div class="index-terms" style="margin-top: 0">
+					<span class="terms-label">What PosePilot can do</span>
+					<span class="term">BVH Viewer</span>
+					<span class="term">Motion Capture Analysis</span>
+					<span class="term">Action Analysis</span>
+					<span class="term">Ergonomic Risk Assessment</span>
+					<span class="term">RULA / REBA</span>
+					<span class="term">Joint Kinematics</span>
+					<span class="term">Skeletal Visualization</span>
+					<span class="term">Dexterity Quantification</span>
+					<span class="term">Sports Motion Analysis</span>
+					<span class="term">Rehabilitation Monitoring</span>
+					<span class="term">Interactive Tool</span>
+					<span class="term">Industrial Ergonomics</span>
+					<span class="term">Comparative Motion Analysis</span>
+					<span class="term">Skeleton Comparison</span>
+					<span class="term">No-Code Analysis Tool</span>
+					<span class="term">Browser-Based, No Install</span>
+					<span class="term">Framework</span>
+					<span class="term">Movement</span>
+					<span class="term">Visualisation</span>
+				</div>
+			</section>
 		</div>
 		<!-- /wrap -->
 
 		<!-- FOOTER -->
 		<footer>
 			<span
-				>&copy; 2026 Dimitrios Makrygiannis &nbsp;·&nbsp; Mines Paris PSL</span
+				>&copy; 2026 Dimitrios Makrygiannis &nbsp;·&nbsp;
+				<a href="https://www.minesparis.psl.eu">Mines Paris PSL</a></span
 			>
 			<span>
 				<a href="mailto:dimitris.makrygiannis@minesparis.psl.eu"
