@@ -17,8 +17,7 @@
 		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>PosePilot: A web-based platform for human motion visualization and analysis
-</title>
+		<title>A platform for BVH visualisation and analysis</title>
 		<meta
 			name="description"
 			content="PosePilot is a free, online BVH viewer and motion capture analysis platform. Visualise, compare, and quantify human motion data directly in your browser, no installation required."
@@ -37,7 +36,7 @@
 		<meta property="og:site_name" content="PosePilot" />
 		<meta
 			property="og:title"
-			content="PosePilot: Human Motion Visualization & Analysis"
+			content="PosePilot: Human Motion Visualisation & Analysis"
 		/>
 		<meta
 			property="og:description"
@@ -53,7 +52,7 @@
 		<meta name="twitter:card" content="summary" />
 		<meta
 			name="twitter:title"
-			content="PosePilot: Human Motion Visualization & Analysis"
+			content="PosePilot: Human Motion Visualisation & Analysis"
 		/>
 		<meta
 			name="twitter:description"
@@ -71,7 +70,7 @@
 				"@type": "SoftwareApplication",
 				"name": "PosePilot",
 				"alternateName": ["AImove PosePilot", "aimove-posepilot"],
-				"description": "An open-access, web-based platform that unifies comparative visualization with interpretable, metric-based analysis of human motion data captured from consumer-grade devices.",
+				"description": "An open-access, web-based platform that unifies comparative visualisation with interpretable, metric-based analysis of human motion data captured from consumer-grade devices.",
 				"url": "https://aimove-posepilot.github.io/",
 				"applicationCategory": "ScientificApplication",
 				"operatingSystem": "Web",
@@ -113,9 +112,10 @@
 				--text: #111827;
 				--text-2: #4b5563;
 				--text-3: #9ca3af;
-				--accent: #4f46e5;
-				--accent-2: #6366f1;
-				--accent-bg: #eef2ff;
+				--accent: #145e9f;
+				--accent-2: #1a6eb5;
+				--accent-bg: #e8f1f9;
+				--gold: #dba21c;
 				--success: #059669;
 				--warning: #d97706;
 				--tag-bg: #f1f5f9;
@@ -232,6 +232,48 @@
 				font-size: 16px;
 			}
 
+			/* nav dropdown */
+			.nav-dropdown {
+				position: relative;
+			}
+			.nav-dropdown-menu {
+				display: none;
+				position: absolute;
+				top: calc(100% + 8px);
+				right: 0;
+				background: #fff;
+				border: 1px solid var(--border);
+				border-radius: 10px;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+				min-width: 220px;
+				padding: 6px;
+				z-index: 100;
+			}
+			.nav-dropdown.open .nav-dropdown-menu {
+				display: block;
+			}
+			.nav-dropdown-menu a {
+				display: flex;
+				flex-direction: column;
+				padding: 10px 14px;
+				border-radius: 7px;
+				text-decoration: none;
+				transition: background 0.15s;
+			}
+			.nav-dropdown-menu a:hover {
+				background: var(--bg-soft);
+			}
+			.nav-dropdown-menu a .dd-name {
+				font-size: 0.84rem;
+				font-weight: 600;
+				color: var(--text);
+			}
+			.nav-dropdown-menu a .dd-desc {
+				font-size: 0.72rem;
+				color: var(--text-3);
+				margin-top: 1px;
+			}
+
 			/* ── HERO ────────────────────────────────────── */
 			.hero {
 				padding: 72px 0 64px;
@@ -279,9 +321,9 @@
 				font-size: 12px;
 			}
 			.badge.published {
-				background: #eff6ff;
-				border-color: #bfdbfe;
-				color: #1d4ed8;
+				background: #e8f1f9;
+				border-color: #b3cfe8;
+				color: #145e9f;
 			}
 			.badge.accepted {
 				background: #f0fdf4;
@@ -320,27 +362,25 @@
 			.btn-primary:hover {
 				background: var(--accent-2);
 				transform: translateY(-1px);
-				box-shadow: 0 4px 16px rgba(79, 70, 229, 0.2);
+				box-shadow: 0 4px 16px rgba(20, 94, 159, 0.2);
 			}
 
 			.btn-outline {
 				background: transparent;
-				color: var(--text);
-				border: 1.5px solid var(--border);
+				color: var(--gold);
+				border: 1.5px solid var(--gold);
 			}
 			.btn-outline:hover {
-				border-color: #9ca3af;
-				background: var(--bg-soft);
+				background: rgba(219, 162, 28, 0.08);
 			}
 
 			.btn-ghost {
 				background: transparent;
-				color: var(--text-2);
-				border: 1.5px solid var(--border);
+				color: var(--gold);
+				border: 1.5px solid var(--gold);
 			}
 			.btn-ghost:hover {
-				color: var(--text);
-				border-color: #9ca3af;
+				background: rgba(219, 162, 28, 0.08);
 			}
 
 			.btn-sm {
@@ -374,7 +414,7 @@
 				font-weight: 700;
 				text-transform: uppercase;
 				letter-spacing: 0.16em;
-				color: var(--accent);
+				color: var(--gold);
 				margin-bottom: 20px;
 				display: block;
 			}
@@ -412,7 +452,7 @@
 			.terms-label {
 				font-size: 0.74rem;
 				font-weight: 600;
-				color: var(--text-3);
+				color: var(--gold);
 				text-transform: uppercase;
 				letter-spacing: 0.08em;
 				margin-right: 4px;
@@ -424,7 +464,7 @@
 				font-weight: 500;
 				background: var(--accent-bg);
 				color: var(--accent);
-				border: 1px solid #c7d2fe;
+				border: 1px solid #b3cfe8;
 			}
 
 			/* ── VIDEO ───────────────────────────────────── */
@@ -677,6 +717,11 @@
 				color: var(--accent);
 			}
 
+			/* nav btn label */
+			.nav-btn-short {
+				display: none;
+			}
+
 			/* ── RESPONSIVE ──────────────────────────────── */
 			@media (max-width: 640px) {
 				h1 {
@@ -688,6 +733,12 @@
 				.hero-logo {
 					width: 88px;
 					height: 88px;
+				}
+				.nav-btn-full {
+					display: none;
+				}
+				.nav-btn-short {
+					display: inline;
 				}
 			}
 		</style>
@@ -703,15 +754,34 @@
 				<ul class="nav-links">
 					<li><a href="#abstract">Abstract</a></li>
 					<li><a href="#publications">Publications</a></li>
-					<li>
+					<li class="nav-dropdown" id="modulesDropdown">
 						<a
-							href="./posepilot.html"
+							href="#"
 							class="nav-btn"
-							aria-label="Launch PosePilot Application"
+							onclick="
+								event.preventDefault()
+								document
+									.getElementById('modulesDropdown')
+									.classList.toggle('open')
+							"
 						>
-							<span class="material-symbols-outlined">rocket_launch</span>
-							All-in-One App
+							<span class="material-symbols-outlined">play_circle</span>
+							Modules
 						</a>
+						<div class="nav-dropdown-menu">
+							<a href="./posepilot_fg.html">
+								<span class="dd-name">PosePilot</span>
+								<span class="dd-desc">Motion visualisation & analysis</span>
+							</a>
+							<a href="./GOM.html">
+								<span class="dd-name">PosePilot-GOM</span>
+								<span class="dd-desc">Dexterity analysis</span>
+							</a>
+							<a href="./ergo.html">
+								<span class="dd-name">PosePilot-Ergo</span>
+								<span class="dd-desc">Ergonomic assessment</span>
+							</a>
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -727,7 +797,7 @@
 				/>
 				<h1>PosePilot</h1>
 				<p class="subtitle">
-					A web-based platform for human motion visualization and analysis
+					A web-based platform for human motion visualisation and analysis
 				</p>
 			</div>
 
@@ -777,26 +847,14 @@
 					<p>Demo video coming soon</p>
 				</div>
 
-				<!-- Platform description + CTA -->
+				<!-- Platform description -->
 				<div class="platform-blurb">
 					<p>
 						PosePilot is a continuously evolving platform, enriched with new
-						functionalities and domain-specific applications over time. Each
-						module is developed in close connection with a research publication,
-						extending the framework's capabilities across biomechanics, sports,
-						performing arts, and industrial ergonomics.
-					</p>
-					<p>
-						If you would like to explore all modules together in a single
-						application, click below:
-					</p>
-					<a href="./posepilot.html" class="btn btn-primary">
-						<span class="material-symbols-outlined">apps</span>
-						All-in-One App
-					</a>
-					<p class="or-line">
-						Or browse the individual versions, each paired with its
-						corresponding paper, in the Publications section below.
+						functionalities and domain-specific modules over time. Each module
+						is developed in close connection with a research publication.
+						Explore them from the <strong>Modules</strong> menu above or browse
+						the publications below.
 					</p>
 				</div>
 			</section>
@@ -833,7 +891,7 @@
 						</div>
 						<div class="pub-links">
 							<a href="./posepilot_fg.html" class="btn btn-primary btn-sm">
-								<span class="material-symbols-outlined">rocket_launch</span>
+								<span class="material-symbols-outlined">play_circle</span>
 								Launch App
 							</a>
 							<a
@@ -900,7 +958,7 @@
 						</div>
 						<div class="pub-links">
 							<a href="./GOM.html" class="btn btn-primary btn-sm">
-								<span class="material-symbols-outlined">rocket_launch</span>
+								<span class="material-symbols-outlined">play_circle</span>
 								Launch App
 							</a>
 							<button class="btn btn-disabled btn-sm" disabled>
@@ -958,7 +1016,7 @@
 						</div>
 						<div class="pub-links">
 							<a href="./ergo.html" class="btn btn-primary btn-sm">
-								<span class="material-symbols-outlined">rocket_launch</span>
+								<span class="material-symbols-outlined">play_circle</span>
 								Launch App
 							</a>
 							<button class="btn btn-disabled btn-sm" disabled>
@@ -1006,7 +1064,7 @@
 							href="https://www.researchgate.net/profile/Dimitrios-Makrygiannis"
 							target="_blank"
 							class="team-link"
-							>Dimitris Makrygiannis</a
+							>Dimitrios Makrygiannis</a
 						>
 						&ensp;·&ensp;
 						<a href="#" class="team-link">Alina Glushkova</a> &ensp;·&ensp;
@@ -1135,6 +1193,12 @@
 				t.classList.add("show")
 				setTimeout(() => t.classList.remove("show"), 3000)
 			}
+
+			// Close dropdown on click outside
+			document.addEventListener("click", function (e) {
+				const dd = document.getElementById("modulesDropdown")
+				if (dd && !dd.contains(e.target)) dd.classList.remove("open")
+			})
 		</script>
 	</body>
 </html>
