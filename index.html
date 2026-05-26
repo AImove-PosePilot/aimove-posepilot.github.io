@@ -754,34 +754,11 @@
 				<ul class="nav-links">
 					<li><a href="#abstract">Abstract</a></li>
 					<li><a href="#publications">Publications</a></li>
-					<li class="nav-dropdown" id="modulesDropdown">
-						<a
-							href="#"
-							class="nav-btn"
-							onclick="
-								event.preventDefault()
-								document
-									.getElementById('modulesDropdown')
-									.classList.toggle('open')
-							"
-						>
+					<li>
+						<a href="./posepilot.html" class="nav-btn">
 							<span class="material-symbols-outlined">play_circle</span>
-							Modules
+							Launch App
 						</a>
-						<div class="nav-dropdown-menu">
-							<a href="./posepilot_fg.html">
-								<span class="dd-name">PosePilot</span>
-								<span class="dd-desc">Motion visualisation & analysis</span>
-							</a>
-							<a href="./GOM.html">
-								<span class="dd-name">PosePilot-GOM</span>
-								<span class="dd-desc">Dexterity analysis</span>
-							</a>
-							<a href="./ergo.html">
-								<span class="dd-name">PosePilot-Ergo</span>
-								<span class="dd-desc">Ergonomic assessment</span>
-							</a>
-						</div>
 					</li>
 				</ul>
 			</div>
@@ -866,6 +843,193 @@
 				<span class="sec-label">Publications</span>
 
 				<div class="pub-list">
+					<!-- V3D FG 2026 -->
+					<div class="pub-item">
+						<div class="pub-meta">
+							<span class="badge accepted">
+								<span class="material-symbols-outlined">check_circle</span>
+								Conference Paper · IEEE FG 2026
+							</span>
+							<span
+								class="pub-year"
+								style="color: var(--success); font-weight: 600"
+								>Accepted</span
+							>
+						</div>
+						<div class="pub-title">
+							PosePilot-V3D: A Web-Based Framework for 3D Hierarchical Skeleton
+							Reconstruction from Monocular Video
+						</div>
+						<div class="pub-authors">
+							D. Makrygiannis, A. Glushkova, G. Senteri, S. Manitsaris
+						</div>
+						<div class="pub-venue">
+							Accepted for
+							<strong
+								>2026 IEEE 20th International Conference on Automatic Face and
+								Gesture Recognition (FG)</strong
+							>
+						</div>
+						<div class="pub-links">
+							<a href="./posepilot.html" class="btn btn-primary btn-sm">
+								<span class="material-symbols-outlined">play_circle</span>
+								Launch App
+							</a>
+							<button class="btn btn-disabled btn-sm" disabled>
+								<span class="material-symbols-outlined">lock</span> PDF Pending
+							</button>
+							<button
+								class="btn btn-ghost btn-sm"
+								onclick="toggleBib('bib-v3d')"
+							>
+								<span class="material-symbols-outlined">format_quote</span>
+								BibTeX
+							</button>
+						</div>
+						<div id="bib-v3d" class="bib-block">
+							<div class="bib-inner">
+								@inproceedings{makrygiannis2026posepilotv3d, title =
+								{PosePilot-V3D: A Web-Based Framework for 3D Hierarchical
+								Skeleton Reconstruction from Monocular Video}, author =
+								{Makrygiannis, Dimitrios and Glushkova, Alina and Senteri,
+								Gavriela and Manitsaris, Sotiris}, booktitle = {2026 IEEE 20th
+								International Conference on Automatic Face and Gesture
+								Recognition (FG)}, year = {2026}, organization = {IEEE}, note =
+								{Accepted} }
+							</div>
+							<div class="bib-footer">
+								<button
+									class="btn btn-ghost btn-sm"
+									onclick="copyBibtex('posepilot_v3d_fg2026')"
+								>
+									<span class="material-symbols-outlined">content_copy</span>
+									Copy
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- GOM -->
+					<div class="pub-item">
+						<div class="pub-meta">
+							<span class="badge published">
+								<span class="material-symbols-outlined">verified</span>
+								Conference Paper · MOCO 2026
+							</span>
+							<span class="pub-year">2026</span>
+						</div>
+						<div class="pub-title">
+							PosePilot-GOM: A Web-based application for dexterity analysis of
+							human movement
+						</div>
+						<div class="pub-authors">
+							Y. Hergal, D. Makrygiannis, G. Senteri, A. Glushkova, S.
+							Manitsaris
+						</div>
+						<div class="pub-venue">
+							Published in
+							<strong>Movement and Computing (MOCO) 2026</strong>
+						</div>
+						<div class="pub-links">
+							<a href="./GOM.html" class="btn btn-primary btn-sm">
+								<span class="material-symbols-outlined">play_circle</span>
+								Launch App
+							</a>
+							<a
+								href="https://dl.acm.org/doi/full/10.1145/3802842.3802905"
+								target="_blank"
+								class="btn btn-outline btn-sm"
+							>
+								<span class="material-symbols-outlined">picture_as_pdf</span>
+								PDF
+							</a>
+							<button
+								class="btn btn-ghost btn-sm"
+								onclick="toggleBib('bib-gom')"
+							>
+								<span class="material-symbols-outlined">format_quote</span>
+								BibTeX
+							</button>
+						</div>
+						<div id="bib-gom" class="bib-block">
+							<div class="bib-inner">
+								@inproceedings{hergal2026posepilot, title = {PosePilot-GOM: A
+								Web-based application for dexterity analysis of human movement},
+								author = {Hergal, Youssef and Makrygiannis, Dimitrios and
+								Senteri, Gavriela and Glushkova, Alina and Manitsaris, Sotiris},
+								booktitle = {Proceedings of the 10th International Conference on
+								Movement and Computing}, pages = {1--5}, year = {2026} }
+							</div>
+							<div class="bib-footer">
+								<button
+									class="btn btn-ghost btn-sm"
+									onclick="copyBibtex('gom_moco2026')"
+								>
+									<span class="material-symbols-outlined">content_copy</span>
+									Copy
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- Ergo -->
+					<div class="pub-item">
+						<div class="pub-meta">
+							<span class="badge accepted">
+								<span class="material-symbols-outlined">check_circle</span>
+								Conference Paper · MOCO 2026
+							</span>
+							<span
+								class="pub-year"
+								style="color: var(--success); font-weight: 600"
+								>Accepted</span
+							>
+						</div>
+						<div class="pub-title">
+							PosePilot-Ergo: A web-based application for ergonomic analysis and
+							human motion quantification
+						</div>
+						<div class="pub-authors">A. Glushkova, D. Makrygiannis, et al.</div>
+						<div class="pub-venue">
+							Accepted for <strong>Movement and Computing (MOCO) 2026</strong>
+						</div>
+						<div class="pub-links">
+							<a href="./ergo.html" class="btn btn-primary btn-sm">
+								<span class="material-symbols-outlined">play_circle</span>
+								Launch App
+							</a>
+							<button class="btn btn-disabled btn-sm" disabled>
+								<span class="material-symbols-outlined">lock</span> PDF Pending
+							</button>
+							<button
+								class="btn btn-ghost btn-sm"
+								onclick="toggleBib('bib-ergo')"
+							>
+								<span class="material-symbols-outlined">format_quote</span>
+								BibTeX
+							</button>
+						</div>
+						<div id="bib-ergo" class="bib-block">
+							<div class="bib-inner">
+								@inproceedings{glushkova2026posepilotergo, title =
+								{PosePilot-Ergo: A web-based application for ergonomic analysis
+								and human motion quantification}, author = {Glushkova, Alina and
+								Makrygiannis, Dimitrios and others}, booktitle = {Proceedings of
+								the 10th International Conference on Movement and Computing},
+								year = {2026}, note = {Accepted} }
+							</div>
+							<div class="bib-footer">
+								<button
+									class="btn btn-ghost btn-sm"
+									onclick="copyBibtex('ergo_moco2026')"
+								>
+									<span class="material-symbols-outlined">content_copy</span>
+									Copy
+								</button>
+							</div>
+						</div>
+					</div>
+
 					<!-- FG 2025 -->
 					<div class="pub-item">
 						<div class="pub-meta">
@@ -931,125 +1095,6 @@
 							</div>
 						</div>
 					</div>
-
-					<!-- GOM -->
-					<div class="pub-item">
-						<div class="pub-meta">
-							<span class="badge accepted">
-								<span class="material-symbols-outlined">check_circle</span>
-								Conference Paper · MOCO 2026
-							</span>
-							<span
-								class="pub-year"
-								style="color: var(--success); font-weight: 600"
-								>Accepted</span
-							>
-						</div>
-						<div class="pub-title">
-							PosePilot-GOM: A Web-based application for dexterity analysis of
-							human movement
-						</div>
-						<div class="pub-authors">
-							Y. Hergal, D. Makrygiannis, G. Senteri, A. Glushkova, S.
-							Manitsaris
-						</div>
-						<div class="pub-venue">
-							Accepted for <strong>Movement and Computing (MOCO) 2026</strong>
-						</div>
-						<div class="pub-links">
-							<a href="./GOM.html" class="btn btn-primary btn-sm">
-								<span class="material-symbols-outlined">play_circle</span>
-								Launch App
-							</a>
-							<button class="btn btn-disabled btn-sm" disabled>
-								<span class="material-symbols-outlined">lock</span> PDF Pending
-							</button>
-							<button
-								class="btn btn-ghost btn-sm"
-								onclick="toggleBib('bib-gom')"
-							>
-								<span class="material-symbols-outlined">format_quote</span>
-								BibTeX
-							</button>
-						</div>
-						<div id="bib-gom" class="bib-block">
-							<div class="bib-inner">
-								@inproceedings{hergal2026posepilotgom, title = {PosePilot-GOM: A
-								Web-based application for dexterity analysis of human movement},
-								author = {Hergal, Youssef and Makrygiannis, Dimitrios and
-								Senteri, Gavriela and Glushkova, Alina and Manitsaris, Sotiris},
-								booktitle = {Proceedings of the 13th International Conference on
-								Movement and Computing}, year = {2026}, note = {Accepted} }
-							</div>
-							<div class="bib-footer">
-								<button
-									class="btn btn-ghost btn-sm"
-									onclick="copyBibtex('gom_moco2026')"
-								>
-									<span class="material-symbols-outlined">content_copy</span>
-									Copy
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<!-- Ergo -->
-					<div class="pub-item">
-						<div class="pub-meta">
-							<span class="badge accepted">
-								<span class="material-symbols-outlined">check_circle</span>
-								Conference Paper · MOCO 2026
-							</span>
-							<span
-								class="pub-year"
-								style="color: var(--success); font-weight: 600"
-								>Accepted</span
-							>
-						</div>
-						<div class="pub-title">
-							PosePilot-Ergo: A web-based application for ergonomic analysis and
-							human motion quantification
-						</div>
-						<div class="pub-authors">A. Glushkova, D. Makrygiannis, et al.</div>
-						<div class="pub-venue">
-							Accepted for <strong>Movement and Computing (MOCO) 2026</strong>
-						</div>
-						<div class="pub-links">
-							<a href="./ergo.html" class="btn btn-primary btn-sm">
-								<span class="material-symbols-outlined">play_circle</span>
-								Launch App
-							</a>
-							<button class="btn btn-disabled btn-sm" disabled>
-								<span class="material-symbols-outlined">lock</span> PDF Pending
-							</button>
-							<button
-								class="btn btn-ghost btn-sm"
-								onclick="toggleBib('bib-ergo')"
-							>
-								<span class="material-symbols-outlined">format_quote</span>
-								BibTeX
-							</button>
-						</div>
-						<div id="bib-ergo" class="bib-block">
-							<div class="bib-inner">
-								@inproceedings{glushkova2026posepilotergo, title =
-								{PosePilot-Ergo: A web-based application for ergonomic analysis
-								and human motion quantification}, author = {Glushkova, Alina and
-								Makrygiannis, Dimitrios and others}, booktitle = {Proceedings of
-								the 13th International Conference on Movement and Computing},
-								year = {2026}, note = {Accepted} }
-							</div>
-							<div class="bib-footer">
-								<button
-									class="btn btn-ghost btn-sm"
-									onclick="copyBibtex('ergo_moco2026')"
-								>
-									<span class="material-symbols-outlined">content_copy</span>
-									Copy
-								</button>
-							</div>
-						</div>
-					</div>
 				</div>
 			</section>
 
@@ -1101,6 +1146,8 @@
 				<div class="index-terms" style="margin-top: 0">
 					<span class="terms-label">What PosePilot can do</span>
 					<span class="term">BVH Viewer</span>
+					<span class="term">Video to BVH</span>
+					<span class="term">GOM</span>
 					<span class="term">Motion Capture Analysis</span>
 					<span class="term">Action Analysis</span>
 					<span class="term">Ergonomic Risk Assessment</span>
@@ -1151,6 +1198,14 @@
 
 		<script>
 			const bibtexData = {
+				posepilot_v3d_fg2026: `@inproceedings{makrygiannis2026posepilotv3d,
+  title        = {PosePilot-V3D: A Web-Based Framework for 3D Hierarchical Skeleton Reconstruction from Monocular Video},
+  author       = {Makrygiannis, Dimitrios and Glushkova, Alina and Senteri, Gavriela and Manitsaris, Sotiris},
+  booktitle    = {2026 IEEE 20th International Conference on Automatic Face and Gesture Recognition (FG)},
+  year         = {2026},
+  organization = {IEEE},
+  note         = {Accepted}
+}`,
 				posepilot_fg2025: `@inproceedings{makrygiannis2025posepilot,
   title        = {PosePilot—A Web-Based Application for Human Motion Data Analysis and Visualization},
   author       = {Makrygiannis, Dimitrios and Glushkova, Alina and Manitsaris, Sotiris and Senteri, Gavriela},
@@ -1159,17 +1214,17 @@
   year         = {2025},
   organization = {IEEE}
 }`,
-				gom_moco2026: `@inproceedings{hergal2026posepilotgom,
+				gom_moco2026: `@inproceedings{hergal2026posepilot,
   title     = {PosePilot-GOM: A Web-based application for dexterity analysis of human movement},
   author    = {Hergal, Youssef and Makrygiannis, Dimitrios and Senteri, Gavriela and Glushkova, Alina and Manitsaris, Sotiris},
-  booktitle = {Proceedings of the 13th International Conference on Movement and Computing},
-  year      = {2026},
-  note      = {Accepted}
+  booktitle = {Proceedings of the 10th International Conference on Movement and Computing},
+  pages     = {1--5},
+  year      = {2026}
 }`,
 				ergo_moco2026: `@inproceedings{glushkova2026posepilotergo,
   title     = {PosePilot-Ergo: A web-based application for ergonomic analysis and human motion quantification},
   author    = {Glushkova, Alina and Makrygiannis, Dimitrios and others},
-  booktitle = {Proceedings of the 13th International Conference on Movement and Computing},
+  booktitle = {Proceedings of the 10th International Conference on Movement and Computing},
   year      = {2026},
   note      = {Accepted}
 }`,
@@ -1193,12 +1248,6 @@
 				t.classList.add("show")
 				setTimeout(() => t.classList.remove("show"), 3000)
 			}
-
-			// Close dropdown on click outside
-			document.addEventListener("click", function (e) {
-				const dd = document.getElementById("modulesDropdown")
-				if (dd && !dd.contains(e.target)) dd.classList.remove("open")
-			})
 		</script>
 	</body>
 </html>
