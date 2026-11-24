@@ -1,0 +1,7 @@
+InstantHMR model files
+
+instanthmr-small.onnx and mhr-body.onnx come from https://huggingface.co/momolesang/InstantHMR.
+
+They are distributed under the SAM License. A copy of the license is in LICENSE-SAM in this folder.
+instanthmr-small.onnx is for non-commercial use only.
+The body model inside mhr-body.onnx is Meta's MHR (Apache-2.0).
